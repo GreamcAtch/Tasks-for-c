@@ -1,0 +1,48 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+    // Пользователь вводит прибыль фирмы за год (12 месяцев).
+    // Затем пользователь вводит диапазон (например, 3 и 6 – поиск между третьим и шестым месяцем).
+    // Необходимо определить месяц, в котором прибыль была максимальной, и месяц, в котором прибыль была минимальной,
+    // с учетом выбранного диапазона.
+
+   
+    const int profit = 12;
+    int ar[profit];                                                  // создание массива из двенадцати элементов цикл, перебирающий элемент массива;
+    int max = ar [0];
+    int min = ar [0];
+    int range, range1;                                               //созадем переменные для ввода диапозона
+
+    for (int i = 0; i < profit; i++)
+    {
+        cout << "Enter profit company for 12 month: \n";            // на каждой итерации цикла пользователю подставляется элемент с индексом i для заполнения.
+        cin >> ar[i];
+
+    }
+    cout << "Enter range: \n";
+    cin >> range >> range1;
+
+    for (int j = range; j < range1; j++)
+    {
+        if (min > ar[j])
+        {
+            min = ar[j];
+        }
+
+        if (max < ar[j])
+        {
+            max = ar[j];
+        }
+    }
+    cout<<"Max profit for range " << range << " " << "and range " << range1 << " = " <<max<<"\n\n";            // вывод максимального результата на экран
+
+    cout<<"Min profit for range " << range << " " << "and range " << range1 << " = " <<min<<"\n\n";            // вывод минимального результата на экран
+
+    cout << "\n\n";
+
+     return 0;
+}
